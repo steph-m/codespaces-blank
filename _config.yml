@@ -1,7 +1,7 @@
 title: "Mon Petit Site"
 description: "Un petit site statique, simple et responsive, construit avec Jekyll et Markdown."
-baseurl: "" # set to "" for user/organization site, or "/repo" for project pages
-url: "" # optional: https://username.github.io
+baseurl: "/codespaces-blank" # Pour un site projet hébergé sur GitHub Pages, définissez `baseurl` sur le nom du repo
+#url: "https://steph-m.github.io" # url facultative : https://username.github.io
 markdown: kramdown
 permalink: /:path/
 theme: minima
