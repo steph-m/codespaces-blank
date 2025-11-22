@@ -1,11 +1,30 @@
 title: "Mon Petit Site"
 description: "Un petit site statique, simple et responsive, construit avec Jekyll et Markdown."
 baseurl: "/codespaces-blank" # Pour un site projet hébergé sur GitHub Pages, définissez `baseurl` sur le nom du repo
-#url: "https://steph-m.github.io" # url facultative : https://username.github.io
+url: "https://steph-m.github.io" # url facultative : https://username.github.io
 markdown: kramdown
 permalink: /:path/
 
-# Thème moderne et visuel compatible GitHub Pages
-theme: jekyll-theme-cayman
+# Utiliser le thème Minimal Mistakes via `remote_theme` (compatible GitHub Pages)
+remote_theme: "mmistakes/minimal-mistakes"
+plugins:
+	- jekyll-feed
 
-# Utiliser `minima` fourni par GitHub Pages évite d'ajouter du HTML/CSS personnalisé.
+# Navigation (menu) — adapté pour une association sportive
+navigation:
+	- title: "Accueil"
+		url: /
+	- title: "Projets"
+		url: /projets/
+	- title: "Contact"
+		url: /contact/
+
+# Logo et bannière
+logo: "/assets/images/logo.png"
+logo_alt: "Logo de l'association"
+logo_width: 120
+
+# Indication pour la bannière de l'en-tête (Minimal Mistakes utilisera selon ses options)
+header:
+  background: "/assets/images/banner.jpg"
+  background_alt: "Bannière du site"
