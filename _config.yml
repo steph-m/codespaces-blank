@@ -12,12 +12,12 @@ remote_theme: "mmistakes/minimal-mistakes"
 
 # Navigation (menu) — adapté pour une association sportive
 navigation:
-	- title: "Accueil"
-		url: /
-	- title: "Projets"
-		url: /projets/
-	- title: "Contact"
-		url: /contact/
+  - title: "Accueil"
+    url: /
+  - title: "Projets"
+    url: /projets/
+  - title: "Contact"
+    url: /contact/
 
 # Logo et bannière
 logo: "/assets/images/logo.png"
