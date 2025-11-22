@@ -4,6 +4,8 @@ baseurl: "/codespaces-blank" # Pour un site projet hébergé sur GitHub Pages, d
 #url: "https://steph-m.github.io" # url facultative : https://username.github.io
 markdown: kramdown
 permalink: /:path/
-theme: minima
+
+# Thème moderne et visuel compatible GitHub Pages
+theme: jekyll-theme-cayman
 
 # Utiliser `minima` fourni par GitHub Pages évite d'ajouter du HTML/CSS personnalisé.

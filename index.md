@@ -2,9 +2,12 @@
 title: Accueil
 ---
 
+
 # Bienvenue
 
-Bienvenue sur ce petit site construit avec **Markdown** et **Jekyll**. Le design est géré par le thème `minima` (fourni par GitHub Pages) — aucun fichier HTML/CSS personnalisé n'est nécessaire.
+[Accueil](index.md) | [Projets](projets.md) | [Contact](contact.md)
+
+Bienvenue sur ce petit site construit avec **Markdown** et **Jekyll**. Le design est géré par le thème `jekyll-theme-cayman` (fourni par GitHub Pages) — aucun fichier HTML/CSS personnalisé n'est nécessaire.
 
 ## À propos
 
@@ -12,10 +15,8 @@ Je crée ici un site simple, responsive et facile à maintenir. Personnalisez le
 
 ## Projets
 
-- **Projet A** — Description courte.
-- **Projet B** — Description courte.
+Voir la page [Projets](projets.md) pour plus de détails.
 
 ## Contact
 
-- Email : `votremail@exemple.com`
-- Twitter : `@votreprofil`
+Retrouvez toutes les informations sur la page [Contact](contact.md).

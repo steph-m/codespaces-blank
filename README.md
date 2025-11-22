@@ -1,6 +1,7 @@
 # Mon Petit Site (Jekyll + GitHub Pages)
 
-Ceci est un site Jekyll minimal qui utilise le thème `minima` intégré à GitHub Pages — aucun HTML/CSS personnalisé n'est présent dans le dépôt.
+
+Ceci est un site Jekyll minimal qui utilise le thème `jekyll-theme-cayman` intégré à GitHub Pages — aucun HTML/CSS personnalisé n'est présent dans le dépôt.
 
 
 Instructions rapides :
@@ -33,7 +34,13 @@ Notes :
 - Pour changer la branche source du workflow, modifiez la clé `branches` dans `.github/workflows/gh-pages.yml`.
 
 
-Personnalisation :
 
-- Modifiez `index.md` pour changer le contenu en Markdown.
-- Si vous voulez un style personnalisé, dites-le : je peux proposer une modification limitée (fichier CSS séparé) ou configurer un thème différent.
+## Personnalisation
+
+- Le thème a été changé pour `jekyll-theme-cayman` (voir `_config.yml`) pour un rendu plus moderne.
+- Deux pages supplémentaires sont disponibles :
+	- [`projets.md`](projets.md) : liste détaillée des projets
+	- [`contact.md`](contact.md) : informations de contact
+- La navigation entre les pages se fait via des liens Markdown en haut de chaque page.
+- Pour ajouter une page, créez un fichier `.md` avec un frontmatter YAML (`--- title: ... ---`).
+- Pour changer de thème, modifiez la clé `theme:` dans `_config.yml` (voir https://pages.github.com/themes/ pour la liste des thèmes compatibles).
