@@ -7,7 +7,8 @@ permalink: /:path/
 
 # Utiliser le thème Minimal Mistakes via `remote_theme` (compatible GitHub Pages)
 remote_theme: "mmistakes/minimal-mistakes"
-#plugins:
+plugins:
+  - jekyll-include-cache
 #	- jekyll-feed
 
 # Navigation (menu) — adapté pour une association sportive
