@@ -1,50 +1,99 @@
 # Copilot Instructions for This Repository
 
-## Aperçu du projet
-- **Type** : Site statique minimal basé sur Jekyll, uniquement Markdown, sans HTML/CSS personnalisé.
-- **Thème** : `minima` (fourni par GitHub Pages, aucune personnalisation locale du thème).
-- **Usage principal** : Présenter un site simple, responsive, facile à maintenir, hébergé sur GitHub Pages.
+### Aperçu
+- Type : site statique Jekyll, contenu en Markdown.
+- Thème actuel : Minimal Mistakes (via `remote_theme` ou gem `minimal-mistakes-jekyll`).
+- Usage : site d'association sportive — pages principales : Accueil, Projets, Contact.
 
-## Structure et fichiers clés
-- `_config.yml` : Configuration Jekyll (titre, baseurl, thème, options de build).
-- `index.md` : Page d'accueil, tout le contenu éditable en Markdown.
-- `.github/workflows/gh-pages.yml` : Déploiement automatique via GitHub Actions (build Docker Jekyll, publication sur `gh-pages`).
-- `README.md` : Instructions pour preview local, déploiement, et personnalisation.
+### Changements récents
+- Passage au thème Minimal Mistakes.
+- Ajout des assets : `assets/images/logo.svg` et `assets/images/banner.jpg`.
 
-## Workflows et commandes critiques
-- **Preview local** :
-  ```bash
-  gem install bundler jekyll
-  bundle init
-  echo "gem 'github-pages', group: :jekyll_plugins" >> Gemfile
-  bundle install
-  bundle exec jekyll serve
-  ```
-  Accès sur `http://127.0.0.1:4000`.
-- **Déploiement** :
-  - Automatique à chaque push sur `main` (voir workflow GitHub Actions).
-  - Utilise l'image Docker officielle `jekyll/jekyll:4` pour garantir la cohérence du build.
-  - Publication sur la branche `gh-pages` via `peaceiris/actions-gh-pages`.
+### Structure et fichiers importants
+- `_config.yml` — configuration (titre, `baseurl`, thème, plugins, navigation, `defaults`).
+- `index.md`, `projets.md`, `contact.md` — pages en Markdown.
+- `assets/images/` — logos et images de bannière.
+- `.github/workflows/` — workflows CI optionnels.
 
-## Conventions et particularités
-- **Aucune personnalisation HTML/CSS** :
-  - Toute modification de contenu se fait en Markdown.
-  - Pour ajouter du style, créer un fichier CSS séparé ou changer de thème (voir README).
-- **Pas de plugins Jekyll custom** :
-  - Seuls les plugins supportés par GitHub Pages sont autorisés (via `github-pages`).
-- **Baseurl** :
-  - Toujours définir `baseurl` dans `_config.yml` pour un site projet (ex : `/codespaces-blank`).
+### Build local et plugin requis
+Minimal Mistakes utilise parfois le tag Liquid `include_cached` fourni par le plugin `jekyll-include-cache`. Pour un build fiable, il est recommandé d'utiliser Bundler et un `Gemfile` listant les gems nécessaires.
 
-## Exemples de patterns
-- Pour ajouter une nouvelle page : créer un fichier `.md` à la racine, ajouter un frontmatter YAML minimal (`--- title: ... ---`).
-- Pour modifier le menu ou l'apparence : passer par la configuration du thème ou changer de thème (pas de modification directe du HTML).
+Exemple de `Gemfile` recommandé :
+```ruby
+source "https://rubygems.org"
 
-## Points d'attention pour les agents
-- Ne pas générer de HTML/CSS custom sans demande explicite.
-- Respecter la structure minimaliste et la logique Markdown-only.
-- Toute personnalisation doit être documentée dans le README.
-- Vérifier la cohérence du `baseurl` et des liens internes lors de l'ajout de pages.
+gem "jekyll", "~> 4.2"
+gem "minimal-mistakes-jekyll"
+gem "jekyll-include-cache"
+gem "jekyll-feed"
+```
+
+Commandes locales pour tester :
+```bash
+gem install bundler
+bundle install
+bundle exec jekyll serve
+```
+
+Si tu préfères garder `remote_theme: "mmistakes/minimal-mistakes"`, il faudra toutefois builder via `bundle` (ou en CI) pour charger `jekyll-include-cache` si le thème l'utilise.
+
+### Déploiement / CI (extrait)
+Installer les dépendances puis builder :
+```yaml
+- name: Install dependencies
+  run: |
+    gem install bundler
+    bundle install
+- name: Build site
+  run: bundle exec jekyll build --destination _site
+```
+
+Puis déployer le contenu de `_site` (par ex. via `peaceiris/actions-gh-pages`).
+
+### Gestion des images (logo / bannière)
+- Place les images dans `assets/images/`.
+- Pour éviter les faux positifs du linter, les exemples dans la doc utilisent des chemins explicites :
+```markdown
+![Logo](/assets/images/logo.svg)
+<img src="/assets/images/banner.jpg" alt="Bannière" />
+```
+
+### Utiliser la bannière avec Minimal Mistakes
+Minimal Mistakes attend généralement l'image de l'en-tête dans le front matter d'une page (`header.image`) ou via `defaults` dans `_config.yml`.
+
+Exemple (front matter d'une page) :
+```yaml
+---
+title: Accueil
+header:
+  teaser: true
+  image: "/assets/images/banner.jpg"
+  caption: "Association Sportive — Passion & Partage"
+---
+```
+
+Exemple (appliquer globalement via `_config.yml`) :
+```yaml
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      header:
+        teaser: true
+        image: "/assets/images/banner.jpg"
+```
+
+### Bonnes pratiques
+- Préfère les SVG pour les logos (transparence et scalabilité).
+- Optimise les images avant commit (compression).
+- Documente toute modification structurelle dans `README.md`.
+
+### Points d'attention
+- Si tu rencontres `Unknown tag 'include_cached'`, ajoute `jekyll-include-cache` au `Gemfile` et build via `bundle`.
+- Vérifie `baseurl` dans `_config.yml` pour les chemins d'assets.
+- Évite de modifier le HTML du thème Minimal Mistakes ; privilégie la configuration et les includes.
 
 ---
 
-Pour toute modification structurelle ou ajout de fonctionnalité, documenter la démarche dans le README et/ou ce fichier.
+Documente toute modification structurelle dans le `README.md` ou ici.
