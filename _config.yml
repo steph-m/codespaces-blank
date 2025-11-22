@@ -25,7 +25,13 @@ logo: "/assets/images/logo.png"
 logo_alt: "Logo de l'association"
 logo_width: 120
 
-# Indication pour la bannière de l'en-tête (Minimal Mistakes utilisera selon ses options)
-header:
-  background: "/assets/images/banner.jpg"
-  background_alt: "Bannière du site"
+# Defaults — appliquer une bannière d'en-tête par défaut aux pages
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      header:
+        teaser: true
+        image: "/assets/images/banner.jpg"
+        caption: "Association Sportive — Passion & Partage"
