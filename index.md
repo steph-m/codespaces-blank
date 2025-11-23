@@ -1,13 +1,12 @@
 ---
 title: Accueil
+#layout: page
 ---
 
 
 # Bienvenue
 
-[Accueil](index.md) | [Projets](projets.md) | [Contact](contact.md)
-
-Bienvenue sur ce petit site construit avec **Markdown** et **Jekyll**. Le design est géré par le thème `jekyll-theme-cayman` (fourni par GitHub Pages) — aucun fichier HTML/CSS personnalisé n'est nécessaire.
+Bienvenue au dojo
 
 ## À propos
 

@@ -1,0 +1,15 @@
+
+main:
+  - title: "Projets"
+    url: /projets/
+  - title: "Contact"
+    url: /contact/
+  - title: "Contact2"
+    url: /contact/
+  - title: "Contact3"
+    url: /contact3/
+
+
+  - title: "External Link"
+    url: https://google.com
+    target: _blank

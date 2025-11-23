@@ -1,37 +1,39 @@
 title: "Mon Petit Site"
 description: "Un petit site statique, simple et responsive, construit avec Jekyll et Markdown."
 baseurl: "/codespaces-blank" # Pour un site projet hébergé sur GitHub Pages, définissez `baseurl` sur le nom du repo
-url: "https://steph-m.github.io" # url facultative : https://username.github.io
+#url: "https://steph-m.github.io" # url facultative : https://username.github.io
 markdown: kramdown
+atom_feed:
+  hide: true
 permalink: /:path/
 
 # Utiliser le thème Minimal Mistakes via `remote_theme` (compatible GitHub Pages)
 remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-include-cache
-#	- jekyll-feed
 
-# Navigation (menu) — adapté pour une association sportive
-navigation:
-  - title: "Accueil"
-    url: /
-  - title: "Projets"
-    url: /projets/
-  - title: "Contact"
-    url: /contact/
 
-# Logo et bannière
-logo: "/assets/images/logo.png"
-logo_alt: "Logo de l'association"
-logo_width: 120
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Settings
+locale                   : "fr-FR"
+
+# teaser                   : "/assets/images/banner.jpg" # path of fallback teaser image
+logo                     : "/assets/images/logo.png"
+#logo_width               : 120
+
+
 
 # Defaults — appliquer une bannière d'en-tête par défaut aux pages
 defaults:
   - scope:
       path: ""
-      type: "pages"
+      #type: "pages"
     values:
+      layout: single
       header:
-        teaser: true
-        image: "/assets/images/banner.jpg"
-        caption: "Association Sportive — Passion & Partage"
+        #teaser: true
+        #image: "/assets/images/banner.jpg"
+        overlay_image: "/assets/images/banner.jpg"
+        #overlay_filter: 0.5
+        #caption: "Association Sportive — Passion & Partage"
