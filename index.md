@@ -3,19 +3,14 @@ title: Accueil
 #layout: page
 ---
 
+Bienvenue au Dojo Léon Bressan, club associatif d'arts martiaux à Algrange qui vous propose:
+* Judo
+* Karaté
+* Krav-maga
+* Jujitsu
 
-# Bienvenue
+mais aussi:
+* Gym féminine / Body Karaté
+* Danse en ligne (mixte)
 
-Bienvenue au dojo
-
-## À propos
-
-Je crée ici un site simple, responsive et facile à maintenir. Personnalisez le contenu en éditant ce fichier Markdown.
-
-## Projets
-
-Voir la page [Projets](projets.md) pour plus de détails.
-
-## Contact
-
-Retrouvez toutes les informations sur la page [Contact](contact.md).
+[Toutes les informations pour la rentrée 2025 ou les inscriptions en cours d'année](rentree.md)
